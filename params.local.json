@@ -1,0 +1,10 @@
+{ 
+  "project_folder" : "/Users/YWang/nf/nextflow-ATACseq-run/" ,
+  "fastqc_raw_data" : "/Users/YWang/nf/nextflow-ATACseq-run/raw_data"  ,
+  "flexbar_raw_data" : "/Users/YWang/nf/nextflow-ATACseq-run/raw_data" ,
+  "fastqc_output": "/Users/YWang/nf/nextflow-ATACseq-run/fastqc_output" ,
+  "adapter_seq" : "CTGTCTCTTATACACATCT",
+  "read1_sufix" : "_R1.fastq.gz",
+  "read2_sufix" : "_R2.fastq.gz",
+  "read12_sufix" : "_R{1,2}.fastq.gz"
+}
