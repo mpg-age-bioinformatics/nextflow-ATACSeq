@@ -6,7 +6,7 @@
 
 
 PROFILE=local
-LOGS="work"
+LOGS="/Users/YWang/nf/nextflow-ATACSeq/work"
 PARAMS="/Users/YWang/nf/nextflow-ATACSeq/params.local.json"
 
 mkdir -p ${LOGS}
@@ -39,25 +39,34 @@ get_images
 run_fastqc 
 run_flexbar 
 
-LOGS=$(readlink -f ${LOGS})
-project_folder=$(grep project_folder ${PARAMS} | awk -F\" '{print $4}' )
-eval cd ${project_folder}
-rm -rf upload.txt
-cat $(find . -name upload.txt) > upload.txt
-mkdir -p summary
-while read line ; 
-  do 
-    folder=$(echo ${line} | awk '{ st = index($0," ");print $1}')
-    ref=$(echo ${line} | awk '{ st = index($0," ");print substr($0,st+1)}')
-    if [[ "${folder}" != "main" ]] ;
-      then
-        target=summary/${folder}/$(basename ${ref})
-        mkdir -p summary/${folder}
-    else
-      target=summary/$(basename ${ref})
-    fi
-  ln -s ${ref} ${target}
-done < upload.txt
+# LOGS=$(readlink -f ${LOGS})
+# project_folder=$(grep project_folder ${PARAMS} | awk -F\" '{print $4}' )
+# eval cd ${project_folder}
+# rm -rf upload.txt
+# cat $(find . -name upload.txt) > upload.txt
+# mkdir -p summary
+# while read line ; 
+#   do 
+#     folder=$(echo ${line} | awk '{ st = index($0," ");print $1}')
+#     ref=$(echo ${line} | awk '{ st = index($0," ");print substr($0,st+1)}')
+#     if [[ "${folder}" != "main" ]] ;
+#       then
+#         target=summary/${folder}/$(basename ${ref})
+#         mkdir -p summary/${folder}
+#     else
+#       target=summary/$(basename ${ref})
+#     fi
+#   ln -s ${ref} ${target}
+# done < upload.txt
 
-echo "- done"
-exit
+# echo "- done"
+# exit
+
+PARAMS="/Users/YWang/nf/nextflow-ATACSeq/params.local.json"
+nextflow run nf-fastqc  -params-file ${PARAMS} -entry images -profile local
+nextflow run nf-flexbar -params-file ${PARAMS} -entry images -profile local
+nextflow run nf-bowtie2 -params-file ${PARAMS} -entry images -profile local
+
+
+nextflow run nf-flexbar -params-file  nf-flexbar/params.local.json  -profile local
+nextflow run nf-bowtie2 -params-file  nf-bowtie2/params.local.json  -profile local
