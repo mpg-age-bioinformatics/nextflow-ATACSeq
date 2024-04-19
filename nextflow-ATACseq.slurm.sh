@@ -175,8 +175,8 @@ run_macs() {
 
 run_bedGraphToBigWig() {
   echo "- running bedGraphToBigWig"  
-  nextflow run ${ORIGIN}nf-bedGraphToBigWig ${BEDGRAPHTOBIGWIG_RELEASE} -params-file -entry bedgraphtobigwig_ATACseq ${PARAMS} -profile ${PROFILE}>> ${LOGS}/nf-bedGraphToBigWig.log 2>&1 
-  nextflow run ${ORIGIN}nf-bedGraphToBigWig ${BEDGRAPHTOBIGWIG_RELEASE} -params-file -entry upload ${PARAMS} -profile ${PROFILE}>> ${LOGS}/nf-bedGraphToBigWig.log 2>&1 
+  nextflow run ${ORIGIN}nf-bedGraphToBigWig ${BEDGRAPHTOBIGWIG_RELEASE} -params-file  ${PARAMS} -entry bedgraphtobigwig_ATACseq  -profile ${PROFILE}>> ${LOGS}/nf-bedGraphToBigWig.log 2>&1 
+  nextflow run ${ORIGIN}nf-bedGraphToBigWig ${BEDGRAPHTOBIGWIG_RELEASE} -params-file ${PARAMS} -entry upload  -profile ${PROFILE}>> ${LOGS}/nf-bedGraphToBigWig.log 2>&1 
   echo "- running bedGraphToBigWig done"  
 }
 
