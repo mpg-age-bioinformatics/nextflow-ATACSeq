@@ -4,6 +4,7 @@
 ## $1 : `release` for latest nextflow/git release; `checkout` for git clone followed by git checkout of a tag ; `clone` for latest repo commit
 ## $2 : profile
 
+source ATACseq.config
 
 get_latest_release() {
   curl --silent "https://api.github.com/repos/$1/releases/latest" |
