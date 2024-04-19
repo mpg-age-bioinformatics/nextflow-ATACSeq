@@ -28,5 +28,8 @@
   "diffbind_out" : "/nexus/posix0/MAGE-flaski/service/hpc/home/wangy/nf_atacseq_test_complete_test/diffbind3_output" ,
   "TxDb" : "TxDb.Mmusculus.UCSC.mm10.knownGene",
   "peakAnno_organism" : "mouse" ,
-  "annoDb" : "org.Mm.eg.db"
+  "annoDb" : "org.Mm.eg.db",
+  "BSgenome" : "BSgenome.Mmusculus.UCSC.mm10",
+  "atac_genome" : "Mmusculus",
+  "chrom" : "1:21"
 }
