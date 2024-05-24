@@ -38,6 +38,8 @@ Run the local test:
 bash nextflow-ATACseq.local.sh clone params.local.json
 ```
 
+Once run is complete you will find in the `work` folder the file `software.txt` with information on all the respective versions used for your run.
+
 Most relevant results files will be found in `summary` eg.:
 ```
 
