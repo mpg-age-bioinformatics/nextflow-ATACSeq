@@ -40,9 +40,20 @@ bash nextflow-ATACseq.local.sh clone params.local.json
 
 Once run is complete you will find in the `work` folder the file `software.txt` with information on all the respective versions used for your run.
 
-Most relevant results files will be found in `summary` eg.:
+Most relevant results files will be found in `/tmp/nextflow_atac_local_complete_test/summary` eg.:
 ```
-
+./multiqc_out/multiqc_report.html
+./bigwig_output/Hetero_TFAM_IgG.Rep_1_treat_pileup.bw
+./bigwig_output/Hetero_TFAM_cGAS.Rep_1_treat_pileup.bw
+./bigwig_output/WT_MEF_IgG.Rep_1_treat_pileup.bw
+./bigwig_output/WT_MEF_cGAS.Rep_1_treat_pileup.bw
+./bigwig_output/WT_TFAM_IgG.Rep_1_treat_pileup.bw
+./bigwig_output/WT_TFAM_cGAS.Rep_1_treat_pileup.bw
+./bigwig_output/YKO_MEF_IgG.Rep_1_treat_pileup.bw
+./bigwig_output/YKO_MEF_cGAS.Rep_1_treat_pileup.bw
+./diffbind3_output/annotated_master_table.xlsx
+./diffbind3_output/consensus_peaks.xlsx
+./diffbind3_output/general_QC.pdf
 ```
 
 ## flaski
