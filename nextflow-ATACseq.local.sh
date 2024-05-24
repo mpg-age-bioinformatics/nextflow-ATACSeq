@@ -73,7 +73,7 @@ else
 
       if [[ ! -e ${repo} ]] ;
         then
-          git clone git@github.com:mpg-age-bioinformatics/${repo}.git
+          git clone https://github.com/mpg-age-bioinformatics/${repo}.git
       fi
 
       if [[ "$1" == "checkout" ]] ;
