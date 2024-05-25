@@ -4,7 +4,7 @@ This workflow is based on the following nextflow pipes:
 
 - https://github.com/mpg-age-bioinformatics/nf-fastqc
 - https://github.com/mpg-age-bioinformatics/nf-flexbar
-- https://github.com/mpg-age-bioinformatics/nf-mageck
+- https://github.com/mpg-age-bioinformatics/nf-kallisto
 - https://github.com/mpg-age-bioinformatics/nf-bowtie2
 - https://github.com/mpg-age-bioinformatics/nf-macs
 - https://github.com/mpg-age-bioinformatics/nf-diffbind
